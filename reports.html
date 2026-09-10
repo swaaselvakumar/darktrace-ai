@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkTrace AI - Reports</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        .sidebar {
+            width: 230px;
+            height: 100vh;
+            position: fixed;
+            background: #111827;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 14px 10px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+        }
+
+        .sidebar a:hover,
+        .sidebar .active {
+            background: #374151;
+        }
+
+        .main {
+            margin-left: 270px;
+            padding: 30px;
+        }
+
+        .header {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0 0 8px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .info-box {
+            background: #f1f3f5;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .info-box h3 {
+            margin: 0 0 8px;
+        }
+
+        .timeline-item {
+            padding: 15px;
+            border-left: 4px solid #333;
+            background: #f1f3f5;
+            margin-bottom: 12px;
+            border-radius: 6px;
+        }
+
+        .score {
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .generate {
+            background: #111827;
+            color: white;
+        }
+
+        .export {
+            background: #e5e7eb;
+            color: #111;
+        }
+
+        @media(max-width: 900px) {
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>🕵️ DarkTrace AI</h2>
+
+        <a href="dashboard.html">🏠 Dashboard</a>
+        <a href="actor.html">👤 Threat Actors</a>
+        <a href="graph.html">🔗 Relationship Graph</a>
+        <a href="blockchain.html">₿ Blockchain</a>
+        <a href="ai-analysis.html">🤖 AI Analysis</a>
+        <a href="timeline.html">🕒 Timeline</a>
+        <a href="reports.html" class="active">📄 Reports</a>
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="header">
+            <h1>📄 Threat Intelligence Report</h1>
+            <p>Investigator report for simulated threat intelligence data</p>
+        </div>
+
+
+        <div class="card">
+
+            <h2>ShadowX</h2>
+
+            <p>
+                <strong>Actor ID:</strong> DT-001
+            </p>
+
+            <p>
+                <strong>Category:</strong> Data Theft
+            </p>
+
+            <p>
+                <strong>Risk Level:</strong> HIGH
+            </p>
+
+            <p>
+                <strong>Attribution Confidence:</strong> 87%
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>📊 Intelligence Summary</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <h3>5</h3>
+                    <p>Known Handles</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>2</h3>
+                    <p>PGP Keys</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>4</h3>
+                    <p>Wallets</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>8</h3>
+                    <p>Infrastructure Indicators</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>🤖 AI Persona Analysis</h2>
+
+            <p>Overall Persona Similarity</p>
+
+            <div class="score">82%</div>
+
+            <p>
+                High similarity detected between ShadowX and related personas.
+            </p>
+
+            <p>
+                Writing Style: <strong>85%</strong>
+            </p>
+
+            <p>
+                Behaviour Pattern: <strong>81%</strong>
+            </p>
+
+            <p>
+                Activity Pattern: <strong>88%</strong>
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>🔗 Relationship Summary</h2>
+
+            <p>ShadowX ↔ Shadow_2025</p>
+            <p>ShadowX ↔ PGP-ABC123</p>
+            <p>ShadowX ↔ Wallet-001</p>
+            <p>Wallet-001 ↔ Wallet-024</p>
+            <p>Shadow_2025 ↔ Marketplace-A</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>🕒 Timeline Summary</h2>
+
+            <div class="timeline-item">
+                <strong>August 12, 2026</strong>
+                New marketplace handle observed.
+            </div>
+
+            <div class="timeline-item">
+                <strong>July 28, 2026</strong>
+                Wallet relationship identified.
+            </div>
+
+            <div class="timeline-item">
+                <strong>June 15, 2026</strong>
+                Similar persona pattern detected.
+            </div>
+
+            <div class="timeline-item">
+                <strong>May 22, 2026</strong>
+                PGP key association found.
+            </div>
+
+            <div class="timeline-item">
+                <strong>April 10, 2026</strong>
+                Infrastructure indicator detected.
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>⚠️ Investigation Note</h2>
+
+            <p>
+                This report contains simulated intelligence data for
+                demonstration and academic purposes. It should not be
+                treated as real-world attribution.
+            </p>
+
+            <div class="buttons">
+
+                <button class="generate" onclick="generateReport()">
+                    📄 Generate Report
+                </button>
+
+                <button class="export" onclick="exportJSON()">
+                    📥 Export JSON
+                </button>
+
+                <button class="export" onclick="exportCSV()">
+                    📊 Export CSV
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+function generateReport() {
+    alert("Threat Intelligence Report generated successfully!");
+}
+
+function exportJSON() {
+    const data = {
+        actor: "ShadowX",
+        actorId: "DT-001",
+        risk: "HIGH",
+        category: "Data Theft",
+        attributionConfidence: "87%",
+        personaSimilarity: "82%",
+        knownHandles: 5,
+        pgpKeys: 2,
+        wallets: 4,
+        infrastructureIndicators: 8
+    };
+
+    const blob = new Blob(
+        [JSON.stringify(data, null, 2)],
+        { type: "application/json" }
+    );
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "ShadowX_Report.json";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(link.href);
+}
+
+function exportCSV() {
+    const csv =
+        "Field,Value\n" +
+        "Actor,ShadowX\n" +
+        "Actor ID,DT-001\n" +
+        "Risk Level,HIGH\n" +
+        "Category,Data Theft\n" +
+        "Attribution Confidence,87%\n" +
+        "Persona Similarity,82%\n" +
+        "Known Handles,5\n" +
+        "PGP Keys,2\n" +
+        "Wallets,4\n" +
+        "Infrastructure Indicators,8";
+
+    const blob = new Blob(
+        [csv],
+        { type: "text/csv" }
+    );
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "ShadowX_Report.csv";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(link.href);
+}
+</script>

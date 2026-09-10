@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkTrace AI - Threat Actor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            🔐
+            <div>
+                <h2>DarkTrace AI</h2>
+                <small>Threat Intelligence</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="dashboard.html">📊 Dashboard</a>
+            <a href="actor.html" class="active">🔍 Threat Actors</a>
+            <a href="#">🕸️ Relationship Graph</a>
+            <a href="#">⛓️ Blockchain Analysis</a>
+            <a href="#">🤖 AI Persona Analysis</a>
+            <a href="#">🕒 Timeline</a>
+            <a href="#">📄 Reports</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html">🚪 Logout</a>
+        </div>
+
+    </aside>
+
+
+    <!-- Main -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h1>Threat Actor Profile</h1>
+                <p>Correlated intelligence and attribution analysis</p>
+            </div>
+
+            <div class="profile">
+                👤 Investigator
+            </div>
+
+        </header>
+
+
+        <!-- Actor Overview -->
+
+        <section class="actor-overview">
+
+            <div class="actor-icon">
+                👤
+            </div>
+
+            <div class="actor-info">
+
+                <h1>ShadowX</h1>
+
+                <p class="actor-id">
+                    Actor ID: DT-001
+                </p>
+
+                <p>
+                    Suspected threat actor identified through
+                    correlated digital intelligence.
+                </p>
+
+                <div class="tags">
+                    <span class="high">HIGH RISK</span>
+                    <span class="tag">Data Theft</span>
+                    <span class="tag">Marketplace Activity</span>
+                </div>
+
+            </div>
+
+            <div class="confidence">
+
+                <p>Attribution Confidence</p>
+
+                <h1>87%</h1>
+
+                <div class="confidence-bar">
+                    <div></div>
+                </div>
+
+                <small>Based on correlated indicators</small>
+
+            </div>
+
+        </section>
+
+
+        <!-- Intelligence Cards -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">👤</div>
+                <div>
+                    <p>Known Handles</p>
+                    <h2>5</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🔑</div>
+                <div>
+                    <p>PGP Keys</p>
+                    <h2>2</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div>
+                    <p>Wallets</p>
+                    <h2>4</h2>
+                </div>
+            </div>
+
+            <div class="stat-card danger">
+                <div class="stat-icon">🌐</div>
+                <div>
+                    <p>Infrastructure Indicators</p>
+                    <h2>8</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Identity Information -->
+
+        <section class="dashboard-grid">
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <h2>Digital Identifiers</h2>
+                </div>
+
+                <div class="identifier">
+                    <span>Primary Handle</span>
+                    <strong>ShadowX</strong>
+                </div>
+
+                <div class="identifier">
+                    <span>Related Handle</span>
+                    <strong>Shadow_2025</strong>
+                </div>
+
+                <div class="identifier">
+                    <span>PGP Key</span>
+                    <strong>PGP-ABC123</strong>
+                </div>
+
+                <div class="identifier">
+                    <span>Wallet</span>
+                    <strong>Wallet-001</strong>
+                </div>
+
+            </div>
+
+
+            <!-- AI Analysis -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <h2>🤖 AI Persona Analysis</h2>
+                </div>
+
+                <div class="ai-score">
+
+                    <h1>82%</h1>
+
+                    <p>
+                        Persona similarity detected with
+                        previously observed identity.
+                    </p>
+
+                </div>
+
+                <div class="analysis-item">
+                    <span>Writing Style</span>
+                    <strong>High Similarity</strong>
+                </div>
+
+                <div class="analysis-item">
+                    <span>Behaviour Pattern</span>
+                    <strong>Medium Similarity</strong>
+                </div>
+
+                <div class="analysis-item">
+                    <span>Activity Pattern</span>
+                    <strong>High Similarity</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Relationship Section -->
+
+        <section class="panel relationship-panel">
+
+            <div class="panel-header">
+
+                <h2>🕸️ Relationship Overview</h2>
+
+                <button class="small-btn"
+                    onclick="openGraph()">
+                    View Graph
+                </button>
+
+            </div>
+
+            <div class="relationship-graph">
+
+                <div class="node actor-node">
+                    ShadowX
+                </div>
+
+                <div class="connection c1"></div>
+
+                <div class="node">
+                    Wallet-001
+                </div>
+
+                <div class="connection c2"></div>
+
+                <div class="node">
+                    PGP-ABC123
+                </div>
+
+                <div class="connection c3"></div>
+
+                <div class="node">
+                    Marketplace-A
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Timeline -->
+
+        <section class="panel timeline-panel">
+
+            <div class="panel-header">
+                <h2>🕒 Activity Timeline</h2>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <strong>2026-08-12</strong>
+
+                    <p>
+                        New marketplace handle observed.
+                    </p>
+
+                </div>
+
+                <div class="timeline-item">
+
+                    <strong>2026-07-28</strong>
+
+                    <p>
+                        Wallet relationship identified.
+                    </p>
+
+                </div>
+
+                <div class="timeline-item">
+
+                    <strong>2026-06-15</strong>
+
+                    <p>
+                        Similar persona pattern detected.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Actions -->
+
+        <section class="actions">
+
+            <button onclick="generateReport()">
+                📄 Generate Report
+            </button>
+
+            <button onclick="exportData()">
+                ⬇ Export JSON
+            </button>
+
+        </section>
+
+
+        <footer>
+            DarkTrace AI • AI + Blockchain + Cybersecurity
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script>
+
+function openGraph() {
+    alert("Relationship Graph module will open here.");
+}
+
+function generateReport() {
+    alert("Investigation report generation started.");
+}
+
+function exportData() {
+
+    const data = {
+        actor: "ShadowX",
+        actorId: "DT-001",
+        risk: "HIGH",
+        confidence: "87%",
+        handles: 5,
+        pgpKeys: 2,
+        wallets: 4,
+        infrastructureIndicators: 8
+    };
+
+    const file = new Blob(
+        [JSON.stringify(data, null, 2)],
+        { type: "application/json" }
+    );
+
+    const link = document.createElement("a");
+
+    link.href = URL.createObjectURL(file);
+    link.download = "ShadowX-investigation.json";
+
+    link.click();
+
+}
+
+</script>
+
+</body>
+</html>

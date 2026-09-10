@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DarkTrace AI - Relationship Graph</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .graph-page {
+            padding: 30px;
+        }
+
+        .graph-header {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .graph-header h1 {
+            margin: 0 0 8px;
+        }
+
+        .graph-header p {
+            color: #666;
+        }
+
+        .graph-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            min-height: 500px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .graph-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 420px;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .node {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .actor-node {
+            background: #222;
+            width: 150px;
+            height: 150px;
+        }
+
+        .wallet-node {
+            background: #444;
+        }
+
+        .pgp-node {
+            background: #555;
+        }
+
+        .market-node {
+            background: #777;
+        }
+
+        .handle-node {
+            background: #333;
+        }
+
+        .node small {
+            margin-top: 6px;
+            font-weight: normal;
+        }
+
+        .connection {
+            font-size: 30px;
+            font-weight: bold;
+            color: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+}
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            🔐
+            <div>
+                <h2>DarkTrace AI</h2>
+                <small>Threat Intelligence</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="dashboard.html">📊 Dashboard</a>
+            <a href="actor.html">🔍 Threat Actors</a>
+            <a href="graph.html" class="active">🕸️ Relationship Graph</a>
+            <a href="blockchain.html">⛓️ Blockchain Analysis</a>
+            <a href="ai-analysis.html">🤖 AI Persona Analysis</a>
+            <a href="timeline.html">🕒 Timeline</a>
+            <a href="reports.html">📄 Reports</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html">🚪 Logout</a>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <div class="graph-page">
+
+            <div class="graph-header">
+                <h1>🕸️ Relationship Graph</h1>
+                <p>
+                    Visualize relationships between threat actors,
+                    handles, PGP keys, wallets and marketplaces.
+                </p>
+            </div>
+
+            <div class="graph-container">
+
+                <div class="graph-area">
+
+                    <div class="node actor-node">
+                        👤
+                        <div>ShadowX</div>
+                        <small>Threat Actor</small>
+                    </div>
+
+                    <div class="connection">↔</div>
+
+                    <div class="node handle-node">
+                        🔍
+                        <div>Shadow_2025</div>
+                        <small>Handle</small>
+                    </div>
+
+                    <div class="connection">↔</div>
+
+                    <div class="node pgp-node">
+                        🔑
+                        <div>PGP-ABC123</div>
+                        <small>PGP Key</small>
+                    </div>
+
+                    <div class="connection">↔</div>
+
+                    <div class="node wallet-node">
+                        💰
+                        <div>Wallet-001</div>
+                        <small>Wallet</small>
+                    </div>
+
+                    <div class="connection">↔</div>
+
+                    <div class="node market-node">
+                        🌐
+                        <div>Marketplace-A</div>
+                        <small>Marketplace</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <a href="dashboard.html" class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

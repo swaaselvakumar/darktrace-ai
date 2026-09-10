@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DarkTrace AI - Timeline</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .timeline-page {
+            padding: 30px;
+        }
+
+        .timeline-header {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .timeline-header h1 {
+            margin: 0 0 8px;
+            color: #111;
+        }
+
+        .timeline-header p {
+            color: #555;
+        }
+
+        .timeline-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .timeline-container {
+            position: relative;
+            margin-top: 20px;
+            padding-left: 35px;
+        }
+
+        .timeline-container::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #333;
+        }
+
+        .event {
+            position: relative;
+            background: #f1f3f5;
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            color: #222;
+        }
+
+        .event::before {
+            content: "";
+            position: absolute;
+            left: -33px;
+            top: 22px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #222;
+            border: 3px solid white;
+        }
+
+        .event-date {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 7px;
+        }
+
+        .event h3 {
+            margin: 0 0 7px;
+            color: #111;
+        }
+
+        .event p {
+            margin: 0;
+            color: #444;
+        }
+
+        .event-tag {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: #ddd;
+            border-radius: 15px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            🔐
+            <div>
+                <h2>DarkTrace AI</h2>
+                <small>Threat Intelligence</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="dashboard.html">📊 Dashboard</a>
+            <a href="actor.html">🔍 Threat Actors</a>
+            <a href="graph.html">🕸️ Relationship Graph</a>
+            <a href="blockchain.html">⛓️ Blockchain Analysis</a>
+            <a href="ai-analysis.html">🤖 AI Persona Analysis</a>
+            <a href="timeline.html" class="active">🕒 Timeline</a>
+            <a href="#">📄 Reports</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html">🚪 Logout</a>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <div class="timeline-page">
+
+            <div class="timeline-header">
+                <h1>🕒 Threat Actor Timeline</h1>
+                <p>
+                    Track important intelligence events and activities
+                    associated with a threat actor.
+                </p>
+            </div>
+
+
+            <div class="timeline-panel">
+
+                <h2>📅 ShadowX Activity Timeline</h2>
+
+                <div class="timeline-container">
+
+                    <div class="event">
+
+                        <div class="event-date">
+                            August 12, 2026
+                        </div>
+
+                        <h3>🔍 New Marketplace Handle Observed</h3>
+
+                        <p>
+                            A new handle "Shadow_2025" was observed
+                            on Marketplace-A.
+                        </p>
+
+                        <span class="event-tag">
+                            New Handle
+                        </span>
+
+                    </div>
+
+
+                    <div class="event">
+
+                        <div class="event-date">
+                            July 28, 2026
+                        </div>
+
+                        <h3>💰 Wallet Relationship Identified</h3>
+
+                        <p>
+                            Wallet-001 was found to have a possible
+                            relationship with Wallet-024.
+                        </p>
+
+                        <span class="event-tag">
+                            Blockchain
+                        </span>
+
+                    </div>
+
+
+                    <div class="event">
+
+                        <div class="event-date">
+                            June 15, 2026
+                        </div>
+
+                        <h3>🤖 Similar Persona Pattern Detected</h3>
+
+                        <p>
+                            AI analysis detected a high similarity
+                            between ShadowX and Shadow_2025.
+                        </p>
+
+                        <span class="event-tag">
+                            AI Analysis
+                        </span>
+
+                    </div>
+
+
+                    <div class="event">
+
+                        <div class="event-date">
+                            May 22, 2026
+                        </div>
+
+                        <h3>🔑 PGP Key Association Found</h3>
+
+                        <p>
+                            PGP-ABC123 was associated with the
+                            ShadowX persona.
+                        </p>
+
+                        <span class="event-tag">
+                            PGP Intelligence
+                        </span>
+
+                    </div>
+
+
+                    <div class="event">
+
+                        <div class="event-date">
+                            April 10, 2026
+                        </div>
+
+                        <h3>🌐 Infrastructure Indicator Detected</h3>
+
+                        <p>
+                            A new infrastructure indicator was
+                            linked to the actor profile.
+                        </p>
+
+                        <span class="event-tag">
+                            Infrastructure
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <a href="dashboard.html" class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

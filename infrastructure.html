@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkTrace AI - Infrastructure Analysis</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        .sidebar {
+            width: 230px;
+            height: 100vh;
+            position: fixed;
+            background: #111827;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 14px 10px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+        }
+
+        .sidebar a:hover,
+        .sidebar .active {
+            background: #374151;
+        }
+
+        .main {
+            margin-left: 270px;
+            padding: 30px;
+        }
+
+        .header,
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .header h1 {
+            margin: 0 0 8px;
+        }
+
+        .indicator {
+            padding: 15px;
+            background: #f1f3f5;
+            margin-bottom: 12px;
+            border-radius: 8px;
+        }
+
+        .suspicious {
+            color: #c00000;
+            font-weight: bold;
+        }
+
+        .normal {
+            color: #188038;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: #111827;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>🕵️ DarkTrace AI</h2>
+
+    <a href="dashboard.html">🏠 Dashboard</a>
+    <a href="actor.html">👤 Threat Actors</a>
+    <a href="graph.html">🔗 Relationship Graph</a>
+    <a href="blockchain.html">₿ Blockchain</a>
+    <a href="ai-analysis.html">🤖 AI Analysis</a>
+    <a href="timeline.html">🕒 Timeline</a>
+    <a href="reports.html">📄 Reports</a>
+    <a href="infrastructure.html" class="active">🌐 Infrastructure</a>
+
+</div>
+
+<div class="main">
+
+    <div class="header">
+        <h1>🌐 Infrastructure Analysis</h1>
+        <p>Analyse infrastructure indicators and their relationships.</p>
+    </div>
+
+    <div class="card">
+
+        <h2>🔍 Infrastructure Indicators</h2>
+
+        <div class="indicator">
+            <strong>darktrace-demo.com</strong><br>
+            Domain Indicator —
+            <span class="suspicious">⚠ Suspicious</span>
+        </div>
+
+        <div class="indicator">
+            <strong>192.168.10.25</strong><br>
+            IP Indicator —
+            <span class="suspicious">⚠ Suspicious</span>
+        </div>
+
+        <div class="indicator">
+            <strong>mail-server-01</strong><br>
+            Server Indicator —
+            <span class="normal">✓ Normal</span>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>🔗 Infrastructure Relationships</h2>
+
+        <p>ShadowX ↔ darktrace-demo.com</p>
+        <p>ShadowX ↔ 192.168.10.25</p>
+        <p>darktrace-demo.com ↔ mail-server-01</p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>⚠️ Analysis Result</h2>
+
+        <p>
+            Suspicious infrastructure indicators have been identified
+            for further investigation.
+        </p>
+
+        <button onclick="alert('Infrastructure analysis completed!')">
+            🔍 Analyse Infrastructure
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DarkTrace AI - Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            🔐
+            <div>
+                <h2>DarkTrace AI</h2>
+                <small>Threat Intelligence</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#" class="active">📊 Dashboard</a>
+            <a href="actor.html">👤 Threat Actors</a>
+            <a href="graph.html">🕸️ Relationship Graph</a>
+            <a href="blockchain.html">⛓️ Blockchain Analysis</a>
+            <a href="ai-analysis.html">🤖 AI Persona Analysis</a>
+            <a href="timeline.html">🕒 Timeline</a>
+            <a href="reports.html">📄 Reports</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html">🚪 Logout</a>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+
+            <div>
+                <h1>Investigator Dashboard</h1>
+                <p>Dark Web Threat Intelligence & Attribution</p>
+            </div>
+
+            <div class="profile">
+                👤 <span>Investigator</span>
+            </div>
+
+        </header>
+
+
+        <!-- Search -->
+        <section class="search-section">
+
+            <h2>🔍 Search Threat Intelligence</h2>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search username, wallet, PGP key, domain..."
+                >
+
+                <button onclick="searchActor()">Search</button>
+
+            </div>
+
+            <p id="searchResult"></p>
+
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">👤</div>
+                <div>
+                    <p>Total Threat Actors</p>
+                    <h2>1,248</h2>
+                </div>
+            </div>
+
+            <div class="stat-card danger">
+                <div class="stat-icon">⚠️</div>
+                <div>
+                    <p>High Risk Actors</p>
+                    <h2>186</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div>
+                    <p>Wallets Tracked</p>
+                    <h2>3,752</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🔑</div>
+                <div>
+                    <p>PGP Keys</p>
+                    <h2>942</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Main Grid -->
+        <section class="dashboard-grid">
+
+            <!-- Recent Threat Actors -->
+            <div class="panel">
+
+                <div class="panel-header">
+                    <h2>Recent Threat Actors</h2>
+                    <button class="small-btn">View All</button>
+                </div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Actor</th>
+                            <th>Category</th>
+                            <th>Risk</th>
+                            <th>Confidence</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>ShadowX</td>
+                            <td>Data Theft</td>
+                            <td><span class="high">HIGH</span></td>
+                            <td>91%</td>
+                        </tr>
+
+                        <tr>
+                            <td>DarkWolf</td>
+                            <td>Fraud</td>
+                            <td><span class="medium">MEDIUM</span></td>
+                            <td>78%</td>
+                        </tr>
+
+                        <tr>
+                            <td>GhostMarket</td>
+                            <td>Money Laundering</td>
+                            <td><span class="high">HIGH</span></td>
+                            <td>87%</td>
+                        </tr>
+
+                        <tr>
+                            <td>CyberFox</td>
+                            <td>Hacking</td>
+                            <td><span class="low">LOW</span></td>
+                            <td>64%</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- Risk Overview -->
+            <div class="panel">
+
+                <div class="panel-header">
+                    <h2>Risk Overview</h2>
+                </div>
+
+                <div class="risk">
+
+                    <div class="risk-item">
+                        <span>High Risk</span>
+                        <strong>186</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-high"></div>
+                    </div>
+
+
+                    <div class="risk-item">
+                        <span>Medium Risk</span>
+                        <strong>421</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-medium"></div>
+                    </div>
+
+
+                    <div class="risk-item">
+                        <span>Low Risk</span>
+                        <strong>641</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-low"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Intelligence Modules -->
+        <section class="modules">
+
+            <h2>Intelligence Modules</h2>
+
+            <div class="module-grid">
+
+                <div class="module-card">
+                    <span>🕸️</span>
+                    <h3>Relationship Graph</h3>
+                    <p>Map connections between handles, wallets and PGP keys.</p>
+                    <<button onclick="window.location.href='graph.html'">
+    Open Graph →
+</button>
+                </div>
+
+                <div class="module-card">
+                    <span>⛓️</span>
+                    <h3>Blockchain Analysis</h3>
+                    <p>Analyse wallet relationships and transaction patterns.</p>
+                   <button onclick="window.location.href='blockchain.html'">
+    Analyse Wallet →
+</button>
+                </div>
+
+                <div class="module-card">
+                    <span>🤖</span>
+                    <h3>AI Persona Analysis</h3>
+                    <p>Compare behavioural and writing patterns between personas.</p>
+                   <button onclick="window.location.href='ai-analysis.html'">
+    Run AI Analysis →
+</button>
+                </div>
+
+                <div class="module-card">
+                    <span>🌐</span>
+                    <h3>Infrastructure Analysis</h3>
+                    <p>Analyse available infrastructure indicators and relationships.</p>
+                    <button onclick="window.location.href='infrastructure.html'">
+    Analyse Infrastructure →
+</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+            DarkTrace AI • AI + Blockchain + Cybersecurity
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script>
+
+function searchActor() {
+    const searchInput = document.getElementById("searchInput").value.trim();
+    if (searchInput === "") {
+        alert("Please enter a username, wallet, PGP key or domain");
+        return;
+    }
+
+    window.location.href = "actor.html";
+}function searchActor() {
+    const searchInput = document.getElementById("searchInput").value.trim();
+    const result = document.getElementById("searchResult");
+
+    if (searchInput === "") {
+        alert("Please enter a username, wallet, PGP key or domain");
+        return;
+    }
+
+    result.innerHTML =
+        "🔍 Searching for: <strong>" + searchInput + "</strong><br><br>" +
+        "✅ Threat intelligence data found. " +
+        "Opening Threat Actor analysis...";
+
+    setTimeout(function () {
+        window.location.href = "actor.html";
+    }, 1000);
+}
+
+</script>
+
+</body>
+</html>

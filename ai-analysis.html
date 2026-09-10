@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DarkTrace AI - AI Persona Analysis</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .ai-page {
+            padding: 30px;
+        }
+
+        .ai-header {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .ai-header h1 {
+            margin: 0 0 8px;
+            color: #111;
+        }
+
+        .ai-header p {
+            color: #555;
+        }
+
+        .persona-search {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .persona-search input {
+            width: 38%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            color: #111;
+            background: white;
+        }
+
+        .persona-search button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 7px;
+            background: #222;
+            color: white;
+            cursor: pointer;
+        }
+
+        .similarity-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .score {
+            font-size: 55px;
+            font-weight: bold;
+            color: #111;
+            margin: 10px;
+        }
+
+        .score-label {
+            color: #555;
+            font-size: 18px;
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .analysis-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .analysis-box h2 {
+            color: #111;
+            margin-top: 0;
+        }
+
+        .analysis-item {
+            margin: 20px 0;
+        }
+
+        .analysis-item strong {
+            color: #222;
+        }
+
+        .bar {
+            height: 12px;
+            background: #e5e5e5;
+            border-radius: 10px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .fill {
+            height: 100%;
+            background: #333;
+        }
+
+        .high-fill {
+            width: 82%;
+        }
+
+        .medium-fill {
+            width: 76%;
+        }
+
+        .activity-fill {
+            width: 88%;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f3f5;
+            color: #222;
+            border-radius: 8px;
+        }
+
+        .confidence {
+            color: green;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        @media (max-width: 800px) {
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .persona-search input {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            🔐
+            <div>
+                <h2>DarkTrace AI</h2>
+                <small>Threat Intelligence</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="dashboard.html">📊 Dashboard</a>
+            <a href="actor.html">🔍 Threat Actors</a>
+            <a href="graph.html">🕸️ Relationship Graph</a>
+            <a href="blockchain.html">⛓️ Blockchain Analysis</a>
+            <a href="ai-analysis.html" class="active">🤖 AI Persona Analysis</a>
+            <a href="timeline.html">🕒 Timeline</a>
+            <a href="reports.html">📄 Reports</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html">🚪 Logout</a>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <div class="ai-page">
+
+            <div class="ai-header">
+                <h1>🤖 AI Persona Analysis</h1>
+                <p>
+                    Compare writing style, behaviour and activity patterns
+                    to identify possible persona relationships.
+                </p>
+            </div>
+
+
+            <!-- Search -->
+            <div class="persona-search">
+
+                <h2>🔍 Compare Threat Actors</h2>
+
+                <input
+                    type="text"
+                    id="actorOne"
+                    placeholder="First actor e.g. ShadowX"
+                >
+
+                <input
+                    type="text"
+                    id="actorTwo"
+                    placeholder="Second actor e.g. Shadow_2025"
+                >
+
+                <button onclick="runAnalysis()">
+                    Run AI Analysis
+                </button>
+
+                <div id="result"></div>
+
+            </div>
+
+
+            <!-- Overall Score -->
+            <div class="similarity-card">
+
+                <div class="score">82%</div>
+
+                <div class="score-label">
+                    Overall Persona Similarity
+                </div>
+
+                <p class="confidence">
+                    High Similarity Detected
+                </p>
+
+            </div>
+
+
+            <!-- Analysis -->
+            <div class="analysis-grid">
+
+                <div class="analysis-box">
+
+                    <h2>✍️ Writing Style</h2>
+
+                    <div class="analysis-item">
+                        <strong>Language Pattern — 85%</strong>
+
+                        <div class="bar">
+                            <div class="fill high-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-item">
+                        <strong>Vocabulary Similarity — 79%</strong>
+
+                        <div class="bar">
+                            <div class="fill medium-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-item">
+                        <strong>Sentence Pattern — 82%</strong>
+
+                        <div class="bar">
+                            <div class="fill high-fill"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="analysis-box">
+
+                    <h2>🧠 Behaviour Pattern</h2>
+
+                    <div class="analysis-item">
+                        <strong>Marketplace Behaviour — 76%</strong>
+
+                        <div class="bar">
+                            <div class="fill medium-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-item">
+                        <strong>Communication Behaviour — 81%</strong>
+
+                        <div class="bar">
+                            <div class="fill high-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-item">
+                        <strong>Activity Pattern — 88%</strong>
+
+                        <div class="bar">
+                            <div class="fill activity-fill"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <a href="dashboard.html" class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script>
+
+function runAnalysis() {
+
+    const actorOne = document.getElementById("actorOne").value.trim();
+    const actorTwo = document.getElementById("actorTwo").value.trim();
+    const result = document.getElementById("result");
+
+    if (actorOne === "" || actorTwo === "") {
+        alert("Please enter both actor names");
+        return;
+    }
+
+    result.innerHTML =
+        '<div class="result-box">' +
+        '🤖 AI analysis completed for <strong>' +
+        actorOne + '</strong> and <strong>' +
+        actorTwo +
+        '</strong>.<br><br>' +
+        'Persona Similarity: <strong>82%</strong><br>' +
+        'Attribution Confidence: <strong>High</strong>' +
+        '</div>';
+}
+
+</script>
+
+</body>
+</html>

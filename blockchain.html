@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DarkTrace AI - Blockchain Analysis</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .blockchain-page {
+            padding: 30px;
+        }
+
+        .blockchain-header {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .blockchain-header h1 {
+            margin: 0 0 8px;
+        }
+
+        .blockchain-header p {
+            color: #666;
+        }
+
+        .wallet-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .wallet-box input {
+            width: 70%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+        }
+
+        .wallet-box button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 7px;
+            background: #222;
+            color: white;
+            cursor: pointer;
+        }
+
+        .blockchain-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 20px;
+        }
+
+        .blockchain-card {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        .blockchain-card h2 {
+            margin: 0 0 8px;
+            font-size: 28px;
+        }
+
+        .blockchain-card p {
+            color: #666;
+            margin: 0;
+        }
+
+        .blockchain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .blockchain-panel {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .blockchain-panel h2 {
+            margin-top: 0;
+        }
+
+        .transaction {
+            padding: 15px;
+            background: #f4f5f6;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .transaction strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .suspicious {
+            color: #c00000;
+            font-weight: bold;
+        }
+
+        .normal {
+            color: #188038;
+            font-weight: bold;
+        }
+
+        .wallet-list {
+            padding: 12px;
+            background: #f4f5f6;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        @media (max-width: 800px) {
+            .blockchain-stats,
+            .blockchain-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .wallet-box input {
+                width: 60%;
+            }
+        }
+        body {
+    color: #222 !important;
+}
+
+.blockchain-page,
+.blockchain-page h1,
+.blockchain-page h2,
+.blockchain-page h3,
+.blockchain-page p,
+.blockchain-page strong,
+.blockchain-page span,
+.blockchain-header,
+.wallet-box,
+.blockchain-card,
+.blockchain-panel,
+.transaction,
+.wallet-list {
+    color: #222 !important;
+}
+
+.blockchain-header p,
+.blockchain-card p {
+    color: #555 !important;
+}
+
+.wallet-box input {
+    color: #222 !important;
+    background: #fff !important;
+}
+
+.transaction {
+    color: #222 !important;
+}
+
+.transaction .normal {
+    color: green !important;
+}
+
+.transaction .suspicious {
+    color: red !important;
+}
+    </style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            🔐
+            <div>
+                <h2>DarkTrace AI</h2>
+                <small>Threat Intelligence</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="dashboard.html">📊 Dashboard</a>
+            <a href="actor.html">🔍 Threat Actors</a>
+            <a href="graph.html">🕸️ Relationship Graph</a>
+            <a href="blockchain.html" class="active">⛓️ Blockchain Analysis</a>
+            <a href="ai-analysis.html">🤖 AI Persona Analysis</a>
+            <a href="timeline.html">🕒 Timeline</a>
+            <a href="reports.html">📄 Reports</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html">🚪 Logout</a>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <div class="blockchain-page">
+
+            <div class="blockchain-header">
+                <h1>⛓️ Blockchain Analysis</h1>
+                <p>
+                    Analyse wallet relationships, transactions and
+                    suspicious blockchain activity.
+                </p>
+            </div>
+
+
+            <!-- Wallet Search -->
+            <div class="wallet-box">
+
+                <h2>🔍 Search Wallet</h2>
+
+                <input
+                    type="text"
+                    id="walletInput"
+                    placeholder="Enter wallet address..."
+                >
+
+                <button onclick="analyseWallet()">
+                    Analyse Wallet
+                </button>
+
+                <p id="walletResult"></p>
+
+            </div>
+
+
+            <!-- Statistics -->
+            <div class="blockchain-stats">
+
+                <div class="blockchain-card">
+                    <h2>3,752</h2>
+                    <p>Wallets Tracked</p>
+                </div>
+
+                <div class="blockchain-card">
+                    <h2>18,426</h2>
+                    <p>Transactions Analysed</p>
+                </div>
+
+                <div class="blockchain-card">
+                    <h2>247</h2>
+                    <p>Linked Wallets</p>
+                </div>
+
+                <div class="blockchain-card">
+                    <h2>36</h2>
+                    <p>Suspicious Transactions</p>
+                </div>
+
+            </div>
+
+
+            <!-- Analysis Panels -->
+            <div class="blockchain-grid">
+
+                <!-- Transactions -->
+                <div class="blockchain-panel">
+
+                    <h2>💸 Recent Transactions</h2>
+
+                    <div class="transaction">
+                        <strong>Wallet-001 → Wallet-024</strong>
+                        Amount: 2.45 BTC
+                        <br>
+                        <span class="normal">Normal Activity</span>
+                    </div>
+
+                    <div class="transaction">
+                        <strong>Wallet-024 → Wallet-087</strong>
+                        Amount: 8.72 BTC
+                        <br>
+                        <span class="suspicious">
+                            ⚠ Suspicious Activity
+                        </span>
+                    </div>
+
+                    <div class="transaction">
+                        <strong>Wallet-087 → Wallet-102</strong>
+                        Amount: 5.10 BTC
+                        <br>
+                        <span class="suspicious">
+                            ⚠ Suspicious Activity
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <!-- Linked Wallets -->
+                <div class="blockchain-panel">
+
+                    <h2>🔗 Linked Wallets</h2>
+
+                    <div class="wallet-list">
+                        💰 Wallet-001 — Primary
+                    </div>
+
+                    <div class="wallet-list">
+                        💰 Wallet-024 — 92% Relationship
+                    </div>
+
+                    <div class="wallet-list">
+                        💰 Wallet-087 — 86% Relationship
+                    </div>
+
+                    <div class="wallet-list">
+                        💰 Wallet-102 — 71% Relationship
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <a href="dashboard.html" class="back-btn">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script>
+
+function analyseWallet() {
+
+    const wallet = document.getElementById("walletInput").value.trim();
+    const result = document.getElementById("walletResult");
+
+    if (wallet === "") {
+        alert("Please enter a wallet address");
+        return;
+    }
+
+    result.innerHTML = `
+        <div style="
+            margin-top:15px;
+            padding:15px;
+            background:#f1f3f5;
+            border-radius:8px;
+            color:#222;
+        ">
+            <strong>🔍 Wallet Analysis Completed</strong><br><br>
+
+            Wallet: <strong>${wallet}</strong><br>
+            Transactions Analysed: <strong>24</strong><br>
+            Linked Wallets: <strong>4</strong><br>
+            Risk Level: <strong style="color:red;">HIGH</strong><br>
+            Suspicious Transactions: <strong>3</strong><br><br>
+
+            ⚠️ Suspicious blockchain activity detected.
+        </div>
+    `;
+}
+
+</script>
+
+</body>
+</html>
